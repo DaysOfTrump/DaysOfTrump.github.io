@@ -2,11 +2,11 @@
 layout: default
 ---
 
-<div class="post">
-
-    <h2>{{ page.title }}</h2>
-
-	<div class="entry">{{ content }}</div>
-
-</div>
-
+<article class="mdl-card mdl-shadow--2dp">
+	<header class="mdl-card__title">
+		<h2 class="mdl-card__title-text">{{ page.title }}</h2>
+	</header>
+	<div class="mdl-card__supporting-text">
+		{{ content }}
+	</div>
+</article>
