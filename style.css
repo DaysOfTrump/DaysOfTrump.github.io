@@ -39,7 +39,11 @@ section address {
 }
 
 .page-content {
-	margin: 0 auto;
+	margin: 20px auto;
 	max-width: 800px;
+	width: 100%;
+}
+
+.mdl-card {
 	width: 100%;
 }
