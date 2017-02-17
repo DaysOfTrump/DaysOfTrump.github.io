@@ -1,3 +1,1 @@
-// Your scripts go here.
-
-console.log('hello world!');
+console.log('%cDay\'s %cof %cTrump', 'line-height: 30px; font-size: 22px; text-shadow: 4px 4px 11px #BABABA;', 'line-height: 30px; font-size: 22px; text-shadow: 4px 4px 11px #BABABA;', 'line-height: 30px; font-size: 22px; text-shadow: 4px 4px 11px #BABABA;');
