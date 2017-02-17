@@ -35,12 +35,12 @@
 				<div class="page-content">
 					{{ content }}
 				</div>
+				<footer class="mdl-mini-footer">
+					<div class="mdl-mini-footer__left-section">
+						<div class="mdl-logo">&copy; {{ site.name }} {{ site.time | date: '%Y' }}</div>
+					</div>
+				</footer>
 			</main>
-			<footer class="mdl-mini-footer">
-				<div class="mdl-mini-footer__left-section">
-					<div class="mdl-logo">&copy; {{ site.name }} {{ site.time | date: '%Y' }}</div>
-				</div>
-			</footer>
 		</div>
 		<script src="{{site.baseurl}}/scripts.js"></script>
 	</body>
