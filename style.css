@@ -23,15 +23,9 @@ section address {
 }
 
 #paginator {
-    padding: 10px;
-}
-
-#paginator a {
-    text-decoration: none;
-}
-
-.more {
-    margin-left: 80%;
+	padding: 10px;
+	text-align: center;
+	width: 100%;
 }
 
 .mdl-layout__content {
@@ -46,4 +40,5 @@ section address {
 
 .mdl-card {
 	width: 100%;
+	margin: 6px;
 }
