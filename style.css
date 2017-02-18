@@ -18,14 +18,26 @@ pre {
     width: 80%;
 }
 
-section address {
-    margin-left: 15px;
-}
-
 #paginator {
 	padding: 10px;
-	text-align: center;
-	width: 100%;
+	width: 98%;
+}
+
+.next-page {
+	float: right;
+}
+
+.last-page {
+	float: left;
+}
+
+.next-page, .last-page {
+	margin: 5px;
+}
+
+.mdl-mini-footer {
+	clear: both;
+	margin-top: 20px;
 }
 
 .mdl-layout__content {
