@@ -9,9 +9,21 @@ layout: default
 		</header>
 		<div class="mdl-card__supporting-text">
 			<span><i class="material-icons">&#xE192;</i><time datetime="{{post.date|date:"%F"}}">{{post.date|date:"%b %d, %Y"}}</time></span><br/>
-			<span class="category"><i class="material-icons">&#xE893;</i> {{ post.categories | category_links }}</span><br/>
+			{% unless post.categories == empty %}
+				<div>
+					<i class="material-icons">&#xE893;</i>Categories:<br/>
+				{% for categories in post.categories %}
+					<a href="http://localhost:4000/category.html#{{categories}}" class="mdl-chip mdl-js-ripple-effect">
+					    <span class="mdl-chip__text">{{ categories }}</span>
+					</a>
+				{% endfor %}
+				</div>
+			{% endunless %}
 			<span class="author"><i class="material-icons">&#xE853;</i> {% if post.author %}{{post.author}}{% else %}{{site.author}}{% endif%}</span>
 			{{ post.excerpt }}
+		</div>
+		<div class="mdl-card__actions mdl-card--border">
+			<a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="{{ post.url }}">Read More</a>
 		</div>
 	</article>
 {% endfor %}
