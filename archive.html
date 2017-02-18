@@ -2,30 +2,30 @@
 layout: page
 title: Archive
 ---
-<ul class="demo-list-three mdl-list">
+
+<table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
+	<tbody>
 	{% for post in site.posts %}
-	<li class="mdl-list__item mdl-list__item--three-line">
 		<a href="{{site.baseurl}}{{ post.url }}">
-			<span class="mdl-list__item-primary-content">
-				<span>{{ post.title }}</span>
-				<span class="mdl-list__item-text-body">
-					<time datetime="{{post.date|date:"%F"}}">{{post.date|date:"%b %d, %Y"}}</time>
-					{% unless post.categories == empty %}
-					<div class="cats">
-						{% for categories in post.categories %}
-						<a href="{{site.baseurl}}/category.html#{{categories}}" class="mdl-chip mdl-js-ripple-effect">
-							<span class="mdl-chip__text">{{ categories }}</span>
-						</a>
-						{% endfor %}
-					</div>
-					{% endunless %}
-				</span>
-			</span>
+			<tr>
+				<td class="mdl-data-table__cell--non-numeric">{{ post.title }}</td>
+				<td class="mdl-data-table__cell--non-numeric"><time datetime="{{post.date|date:"%F"}}">{{post.date|date:"%b %d, %Y"}}</time></td>
+				<td class="mdl-data-table__cell--non-numeric">
+				{% unless post.categories == empty %}
+					{% for categories in post.categories %}
+					<a href="{{site.baseurl}}/category.html#{{categories}}" class="mdl-chip mdl-js-ripple-effect">
+						<span class="mdl-chip__text">{{ categories }}</span>
+					</a>
+					{% endfor %}
+				{% endunless %}
+				</td>
+			</tr>
 		</a>
-	</li>
 	{% endfor %}
-</ul>
-    <section>
+	</tbody>
+</table>
+
+<section>
         <table>
             {% for post in site.posts %}
             <tr>
