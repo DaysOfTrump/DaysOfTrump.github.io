@@ -3,13 +3,10 @@ layout: default
 ---
 
 <article class="mdl-card mdl-shadow--2dp">
-	<header class="mdl-card__title">
-		<h2 class="mdl-card__title-text">{{ page.title }}</h2>
-	</header>
 	<div class="mdl-card__supporting-text">
-		<span><i class="icon-clock"></i><time datetime="{{page.date|date:"%F"}}">{{page.date|date:"%b %d, %Y"}}</time></span><br/>
-		<span class="category"><i class="icon-tag"></i> {{ page.categories | category_links }}</span><br/>
-		<span class="author"><i class="icon-user"></i> {% if page.author %}{{page.author}}{% else %}{{site.author}}{% endif%}</span>
+		<span><i class="material-icons">&#xE192;</i><time datetime="{{page.date|date:"%F"}}">{{page.date|date:"%b %d, %Y"}}</time></span><br/>
+		<span class="category"><i class="material-icons">&#xE893;</i> {{ page.categories | category_links }}</span><br/>
+		<span class="author"><i class="material-icons">&#xE853;</i> {% if page.author %}{{page.author}}{% else %}{{site.author}}{% endif%}</span>
 		{{ content }}
 	</div>
 </article>
