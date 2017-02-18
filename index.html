@@ -9,11 +9,8 @@ layout: default
 		</header>
 		<div class="mdl-card__supporting-text">
 			{{ post.excerpt }}
-			<div>
-				<time datetime="{{post.date|date:"%F"}}">{{post.date|date:"%b %d, %Y"}}</time>
-			</div>
 			{% unless post.categories == empty %}
-			<div>
+			<div class="cats">
 				{% for categories in post.categories %}
 				<a href="{{site.baseurl}}/category.html#{{categories}}" class="mdl-chip mdl-js-ripple-effect">
 				    <span class="mdl-chip__text">{{ categories }}</span>
@@ -21,6 +18,9 @@ layout: default
 				{% endfor %}
 			</div>
 			{% endunless %}
+			<div>
+				<time datetime="{{post.date|date:"%F"}}">{{post.date|date:"%b %d, %Y"}}</time>
+			</div>
 		</div>
 		<div class="mdl-card__actions mdl-card--border">
 			<a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="{{ post.url }}">Read More</a>
@@ -32,12 +32,12 @@ layout: default
 <div id="paginator">
 	{% if paginator.previous_page %}
 		{% if paginator.previous_page == 1 %}
-			<a class="mdl-button mdl-js-button mdl-js-ripple-effect" href="{{site.baseurl}}/"><i class="material-icons">&#xE5C4;</i> Newer Posts</a>
+			<a class="mdl-button mdl-js-button mdl-js-ripple-effect last-page" href="{{site.baseurl}}/"><i class="material-icons">&#xE5C4;</i> Newer Posts</a>
 		{% else %}
-			<a class="mdl-button mdl-js-button mdl-js-ripple-effect" href="{{site.baseurl}}/page{{paginator.previous_page}}"><i class="material-icons">&#xE5C4;</i> Newer Posts</a>
+			<a class="mdl-button mdl-js-button mdl-js-ripple-effect last-page" href="{{site.baseurl}}/page{{paginator.previous_page}}"><i class="material-icons">&#xE5C4;</i> Newer Posts</a>
 		{% endif %}
 	{% endif %}
 	{% if paginator.next_page %}
-		<a class="mdl-button mdl-js-button mdl-js-ripple-effect" href="{{site.baseurl}}/page{{paginator.next_page}}">Older Posts <i class="material-icons">&#xE5C8;</i></a>
+		<a class="mdl-button mdl-js-button mdl-js-ripple-effect next-page" href="{{site.baseurl}}/page{{paginator.next_page}}">Older Posts <i class="material-icons">&#xE5C8;</i></a>
 	{% endif %}
 </div>
