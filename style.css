@@ -82,3 +82,8 @@ pre {
 	border-radius: 100%;
 	position: absolute;
 }
+
+.author-box {
+	margin: 0px;
+	padding: 0px;
+}
