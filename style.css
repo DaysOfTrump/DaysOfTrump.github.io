@@ -53,3 +53,32 @@ pre {
 .cats {
 	margin: 5px;
 }
+
+.progresswrap {
+	text-align: center;
+}
+
+.progress {
+	position: relative;
+	width: 200px;
+	height: 200px;
+	display: inline-block;
+}
+
+.spindown svg circle {
+	stroke-dashoffset: 0;
+	transition: stroke-dashoffset .9s cubic-bezier(0.2, 0.93, 1, 1);
+	stroke: #E3E3E3;
+	stroke-width: 2px;
+}
+
+.spindown svg .bar {
+	stroke: #666666;
+}
+
+.spindown {
+	height: 200px;
+	width: 200px;
+	border-radius: 100%;
+	position: absolute;
+}
