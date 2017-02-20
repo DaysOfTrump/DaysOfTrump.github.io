@@ -4,13 +4,6 @@ layout: default
 
 <article class="mdl-card mdl-shadow--2dp">
 	<div class="mdl-card__supporting-text">
-		{% if page.author %}
-		<ul class="demo-list-icon mdl-list">
-			<li class="mdl-list__item">
-				<span class="mdl-list__item-primary-content"><i class="material-icons mdl-list__item-icon">person</i>{{page.author}}</span>
-			</li>
-		</ul>
-		{% endif%}
 		{{ content }}
 		{% unless page.categories == empty %}
 		<div class="cats">
@@ -24,5 +17,12 @@ layout: default
 		<div>
 			<time datetime="{{page.date|date:"%F"}}">{{page.date|date:"%b %d, %Y"}}</time>
 		</div>
+		{% if page.author %}
+		<ul class="author-box mdl-list">
+			<li class="mdl-list__item">
+				<span class="mdl-list__item-primary-content"><i class="material-icons mdl-list__item-icon">person</i>{{page.author}}</span>
+			</li>
+		</ul>
+		{% endif%}
 	</div>
 </article>
