@@ -2,6 +2,44 @@
 layout: default
 ---
 
+{% if paginator.previous_page %}{% else %}
+	<article class="mdl-card mdl-shadow--2dp">
+		<div class="mdl-card__supporting-text">
+			<div class="progresswrap">
+				<div>
+					<div class="progress">
+						<div id="day" class="spindown">
+							<svg width="200" height="200" viewPort="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg">
+								<circle r="95" cx="100" cy="100" fill="transparent" stroke-dasharray="565.48" stroke-dashoffset="0"></circle>
+								<circle class="bar" r="95" cx="100" cy="100" fill="transparent" stroke-dasharray="565.48" stroke-dashoffset="0"></circle>
+							</svg>
+						</div>
+						<div id="hours" class="spindown">
+							<svg width="200" height="200" viewPort="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg">
+								<circle r="90" cx="100" cy="100" fill="transparent" stroke-dasharray="565.48" stroke-dashoffset="0"></circle>
+								<circle class="bar" r="90" cx="100" cy="100" fill="transparent" stroke-dasharray="565.48" stroke-dashoffset="0"></circle>
+							</svg>
+						</div>
+						<div id="mins" class="spindown">
+							<svg width="200" height="200" viewPort="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg">
+								<circle r="85" cx="100" cy="100" fill="transparent" stroke-dasharray="565.48" stroke-dashoffset="0"></circle>
+								<circle class="bar" r="85" cx="100" cy="100" fill="transparent" stroke-dasharray="565.48" stroke-dashoffset="0"></circle>
+							</svg>
+						</div>
+						<div id="secs" class="spindown">
+							<svg width="200" height="200" viewPort="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg">
+								<circle r="80" cx="100" cy="100" fill="transparent" stroke-dasharray="565.48" stroke-dashoffset="0"></circle>
+								<circle class="bar" r="80" cx="100" cy="100" fill="transparent" stroke-dasharray="565.48" stroke-dashoffset="0"></circle>
+							</svg>
+						</div>
+					</div>
+				</div>
+				<div id="trumpdown"></div>
+			</div>
+		</div>
+	</article>
+{% endif %}
+
 {% for post in paginator.posts %}
 	<article class="mdl-card mdl-shadow--2dp">
 		<header class="mdl-card__title">
