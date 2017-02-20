@@ -4,9 +4,25 @@ layout: default
 
 <article class="mdl-card mdl-shadow--2dp">
 	<div class="mdl-card__supporting-text">
-		<span><i class="material-icons">&#xE192;</i><time datetime="{{page.date|date:"%F"}}">{{page.date|date:"%b %d, %Y"}}</time></span><br/>
-		<span class="category"><i class="material-icons">&#xE893;</i> {{ page.categories | category_links }}</span><br/>
-		<span class="author"><i class="material-icons">&#xE853;</i> {% if page.author %}{{page.author}}{% else %}{{site.author}}{% endif%}</span>
+		{% if page.author %}
+		<ul class="demo-list-icon mdl-list">
+			<li class="mdl-list__item">
+				<span class="mdl-list__item-primary-content"><i class="material-icons mdl-list__item-icon">person</i>{{page.author}}</span>
+			</li>
+		</ul>
+		{% endif%}
 		{{ content }}
+		{% unless page.categories == empty %}
+		<div class="cats">
+			{% for categories in page.categories %}
+			<a href="{{site.baseurl}}/category.html#{{categories}}" class="mdl-chip mdl-js-ripple-effect">
+			    <span class="mdl-chip__text">{{ categories }}</span>
+			</a>
+			{% endfor %}
+		</div>
+		{% endunless %}
+		<div>
+			<time datetime="{{page.date|date:"%F"}}">{{page.date|date:"%b %d, %Y"}}</time>
+		</div>
 	</div>
 </article>
