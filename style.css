@@ -18,6 +18,10 @@ pre {
     width: 80%;
 }
 
+blockquote table {
+	font-size: 14px;
+}
+
 .next-page {
 	float: right;
 }
